@@ -1,0 +1,372 @@
+text,label
+college time,hours
+switch major,degree_program_info
+made,creator
+information technology,course
+scholarship engineering,scholarship
+list course offered,course
+number seat branch,college intake
+see result,results
+syllabus,syllabus
+long vacation,vacation
+called,name
+eat,menu
+college facility,facilities
+degree offer,course
+much fee,fees
+floor college,floors
+vacation,vacation
+canteen facility,canteen
+uniform,uniform
+exam schedule,sem
+hour operation,hours
+failed one subject last year still eligible apply,eligibility_edge_cases
+leaving,goodbye
+placement,placement
+timing college,hours
+timetable,syllabus
+call,number
+scholarship mechanical,scholarship
+difference eligibility transfer fresh applicant,eligibility_edge_cases
+raise grade dispute,grade_dispute
+name computer hod,computerhod
+come college,hours
+grading appeal process,grade_dispute
+holiday,vacation
+happens miss exam illness,exam_policy
+food canteen,menu
+distance college hostel,hostel
+ragging practice active college,ragging
+library hour exam season,library
+document needed time admission,document
+business administration,course
+document needed admision,document
+payment installment plan available,fees
+college canteen,canteen
+get hostel,hostel
+uniform,uniform
+love,random
+event,event
+branch uni,course
+college fee,fees
+far hostel college,hostel
+failed one subject last year,eligibility_edge_cases
+hostel,hostel
+fee ac room,fees
+gpa drop requirement scholarship,scholarship
+many committee college,committee
+nice meet,greeting
+creator,creator
+miss exam medical emergency,exam_policy
+academic calander,Mess Timetable
+holiday,vacation
+college timing,hours
+hostel,hostel
+international student apply university,admission_requirements
+event organised,event
+college address,location
+extc hod,extchod
+name principal,principal
+college phone,number
+chatting,name
+installment plan available,fees
+take care,goodbye
+duration business administration,course
+wear casuals,uniform
+ttyl,goodbye
+good afternoon,greeting
+missed exam medical emergency,exam_policy
+whatv principal name,principal
+branch available uni,course
+seat allotment,college intake
+many stundent taken branch,college intake
+facility provided,facilities
+scholarship,scholarship
+sport facility,sports
+scholarship computer engineering,scholarship
+holiday,vacation
+course uni,course
+shut,swear
+many time repeat course,course_repeat
+made,creator
+owner,owner
+international student apply,admission_requirements
+library book information,library
+size campus,floors
+goodbye,goodbye
+thank,salutaion
+transfer student eligibility v fresh applicant,eligibility_edge_cases
+college dresscode,uniform
+result,results
+syllabus,syllabus
+hod,ithod
+scholarship civil engineering,scholarship
+company,placement
+created,creator
+information fee,fees
+accessibility office,accessibility
+course offered univrsity uni name,course
+food,canteen
+semester,sem
+recruitment,placement
+happens gpa drop requirement,scholarship
+document required time admission,document
+college facility,facilities
+name creator,creator
+name extc hod,extchod
+automobile scholarship,scholarship
+mechanical engineering,course
+well done,salutaion
+difference b,degree_program_info
+department university,course
+canteen,canteen
+name creator,creator
+take admission college,admission
+fuck,swear
+final transcript yet,eligibility_edge_cases
+nice work,salutaion
+admission requirement computer science degree,admission_requirements
+library facility,library
+ragging,ragging
+semester exam timetable,sem
+list event conducted college,event
+reach college,location
+library,library
+college intake,college intake
+campus accommodation available female student specifically,hostel
+thing,task
+grading dispute process raise,grade_dispute
+scholarship ai ml,scholarship
+developer,creator
+hod,hod
+scholarship chemical engineering,scholarship
+branch available college,course
+working day,hours
+computer hod,computerhod
+semester,sem
+cafetaria,canteen
+branch,course
+list scholarship,scholarship
+timing college,hours
+first year scholarship,scholarship
+address college,location
+accessibility service,accessibility
+contact,number
+good job,salutaion
+document need admission,document
+give sport detail,sports
+sport game,sports
+semester exam,sem
+owns university,owner
+timetable,Mess Timetable
+college,location
+computer engineering,course
+hostel,hostel
+principal name,principal
+infrastructure,infrastructure
+tuition fee engineering program,fees
+admission requirement computer science degree,admission_requirements
+department,course
+vacation,vacation
+name,name
+international student accepted,admission_requirements
+hell,swear
+scholarship,scholarship
+function,event
+name developer,creator
+fee non ac room,fees
+holiday,vacation
+hostel servive,hostel
+phone,number
+university size,size
+college timing,hours
+asshole,swear
+hostel address,hostel
+fee non ac room girl,fees
+event,event
+college library,library
+got go,goodbye
+program offer,course
+floor college,floors
+list event organised college,event
+thanks help,salutaion
+joint degree dual enrollment program,degree_program_info
+much engineering tuition,fees
+mess timetable,Mess Timetable
+hour,hours
+available scholarship,scholarship
+facility,facilities
+chemical engineering,course
+much fee,fees
+program available,course
+attend college,hours
+wheres college,location
+ya,greeting
+guy hostel,hostel
+extc hod,extchod
+happens scholarship gpa drop requirement mid semester,scholarship
+contact,number
+scholarship engineering,scholarship
+hostel facility,hostel
+joint degree program,degree_program_info
+see,goodbye
+hi,greeting
+still submit application without final transcript,eligibility_edge_cases
+hostel capacity,hostel
+ragging history,ragging
+cya,goodbye
+many department,course
+thanks,salutaion
+engineering program tuition,fees
+department available,course
+ragging junior,ragging
+course offer,course
+food get college canteen,menu
+developer,creator
+exam date,sem
+owns college,owner
+information fee,fees
+create,creator
+see ya,goodbye
+bye,goodbye
+max number student,college intake
+timetable,Mess Timetable
+distance hostel college,hostel
+campus size,size
+canteen facility,canteen
+big campus,size
+tell something fee,fees
+grading dispute process,grade_dispute
+exam date,sem
+fee ac room boy,fees
+anyone,greeting
+support student disability,accessibility
+library operating hour exam season,library
+fee hostel,fees
+college location,location
+college telephone number,number
+repeat failed course,course_repeat
+university disability support accessibility office,accessibility
+chemical scholarship,scholarship
+college located,location
+fee non ac room boy,fees
+installment plan available tuition,scholarship
+address college,location
+library,library
+scholarship available,scholarship
+exam,sem
+hostel fee,fees
+policy missing exam due medical emergency,exam_policy
+name principal,principal
+hostel facility,hostel
+branch,course
+hey,greeting
+failed one subject,eligibility_edge_cases
+uniform,uniform
+list course,course
+college placement,placement
+okay,salutaion
+department,course
+food facility,canteen
+ok,salutaion
+semester start,vacation
+fee first year,fees
+computer engineering,course
+idiot,swear
+college open,hours
+owner college,owner
+failed course repeat policy,course_repeat
+whats college address,location
+syllabus,syllabus
+mechanical scholarship,scholarship
+international student apply,admission_requirements
+female hostel accommodation,hostel
+check result,results
+name developer,creator
+bba duration,course
+company visit,placement
+love,random
+get 50 scholarship still pay full hostel fee separately,scholarship
+ragging incident,ragging
+process admission,admission
+hod name,hod
+exam timetable,sem
+committee college,committee
+tell library,library
+hostel fee,hostel
+tall uni college engineering college building,floors
+information sport,sports
+dumb as,swear
+different committe college,committee
+document needed admission,document
+greeting,greeting
+many library,library
+hostel fee,hostel
+good day,goodbye
+name,name
+college principal,principal
+hod,ithod
+repeat failed course,course_repeat
+list event,event
+hostel college distance,hostel
+difference eligibility criterion transfer student v fresh applicant,eligibility_edge_cases
+tell event,event
+comp scholarship,scholarship
+change major,degree_program_info
+owner college,owner
+switch major first semester,degree_program_info
+college infrastructure,infrastructure
+different committee college,committee
+food variety,menu
+contact number,number
+scholarship ce,scholarship
+document,document
+process admission,admission
+college antiragging facility,ragging
+many branch,course
+course,course
+see ya later,goodbye
+many year bachelor business administration take,course
+scholarship chemical,scholarship
+company visit college,placement
+document required admission,document
+whatsup,greeting
+maximum number seat,college intake
+bye,goodbye
+hello,greeting
+floor,floors
+talk later,goodbye
+contact college,number
+name,name
+big university,size
+ragging case,ragging
+gpa need apply,admission_requirements
+mess table,Mess Timetable
+syllabus,syllabus
+call,number
+document required admision,document
+fee,fees
+help,task
+get book,library
+hiya,greeting
+check result,results
+college dress code,uniform
+final exam held,sem
+food menu,menu
+admission process,admission
+taking,name
+cafetaria,canteen
+use,task
+college library facility,library
+phone number,number
+check result,results
+document bring,document
+computer hod,computerhod
+sport activity,sports
+hod,ithod
+tell something college timing,hours
+college located,location
+switch major first semester,degree_program_info
+tell branch available uni,course
+computer,course
+library facility,library
