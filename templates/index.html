@@ -3,120 +3,313 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>University Chatbot</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <meta
+      name="description"
+      content="CampusAI — quick answers for university students."
+    />
+    <title>CampusAI · Student Assistant</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23275650'/><path d='M12 26 32 15l20 11-20 11-20-11Z' fill='none' stroke='%23f1cf8b' stroke-width='4'/></svg>"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css', v='mobile-3') }}"
+    />
   </head>
   <body>
-    <div class="chat-container">
-      <header>University Chatbot</header>
-      <div id="chat" class="chat-box"></div>
-      <div id="form" class="input-area">
-        <input id="msg" placeholder="Type your message..." autocomplete="off" />
-        <button type="button" onclick="sendMessage()">Send</button>
-      </div>
-    </div>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <main class="app-shell">
+      <section class="brand-panel" aria-labelledby="brand-title">
+        <nav class="brand-mark" aria-label="CampusAI home">
+          <span class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="m3 9 9-5 9 5-9 5-9-5Z"></path>
+              <path d="M7 12.5V17c3 2.1 7 2.1 10 0v-4.5"></path>
+            </svg>
+          </span>
+          <span>Campus<span>AI</span></span>
+        </nav>
+
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Your campus, simplified</p>
+          <h1 id="brand-title">
+            Answers that keep your
+            <span>student life moving.</span>
+          </h1>
+          <p class="hero-description">
+            Ask about admissions, programs, fees, exams, facilities, and
+            student services—all in one conversation.
+          </p>
+        </div>
+
+        <div class="orb-scene" aria-hidden="true">
+          <div class="orbit orbit-outer">
+            <span class="satellite satellite-one"></span>
+          </div>
+          <div class="orbit orbit-inner">
+            <span class="satellite satellite-two"></span>
+          </div>
+          <div class="orb">
+            <div class="orb-grid"></div>
+            <div class="orb-glow"></div>
+            <svg viewBox="0 0 64 64">
+              <path d="m12 26 20-11 20 11-20 11-20-11Z"></path>
+              <path d="M21 33v10c7 5 15 5 22 0V33"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="topic-row" aria-label="Topics CampusAI can help with">
+          <span>Admissions</span>
+          <span>Academics</span>
+          <span>Campus life</span>
+        </div>
+      </section>
+
+      <section class="chat-panel" aria-labelledby="chat-title">
+        <header class="chat-header">
+          <div class="assistant-identity">
+            <div class="assistant-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 10h8M9 14h.01M15 14h.01"></path>
+                <rect x="4" y="6" width="16" height="13" rx="5"></rect>
+                <path d="M12 3v3"></path>
+              </svg>
+            </div>
+            <div>
+              <h2 id="chat-title">Campus Assistant</h2>
+              <p><span class="status-dot"></span> Ready to help</p>
+            </div>
+          </div>
+          <button
+            id="clear-chat"
+            class="icon-button"
+            type="button"
+            aria-label="Start a new conversation"
+            title="New conversation"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"></path>
+            </svg>
+          </button>
+        </header>
+
+        <div
+          id="chat"
+          class="chat-box"
+          role="log"
+          aria-live="polite"
+          aria-relevant="additions"
+        >
+          <div class="day-label">Today</div>
+          <article class="message bot-message">
+            <div class="message-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 10h8M9 14h.01M15 14h.01"></path>
+                <rect x="4" y="6" width="16" height="13" rx="5"></rect>
+                <path d="M12 3v3"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="bubble bot">
+                <p class="message-kicker">Welcome to CampusAI</p>
+                <p>
+                  Hi! I’m your university assistant. What would you like to
+                  know today?
+                </p>
+              </div>
+              <time>Just now</time>
+            </div>
+          </article>
+
+          <div id="suggestions" class="suggestions" aria-label="Suggested questions">
+            <button type="button" data-prompt="What courses do you offer?">
+              <span class="suggestion-icon copper" aria-hidden="true">⌁</span>
+              Explore programs
+            </button>
+            <button type="button" data-prompt="How can I apply for admission?">
+              <span class="suggestion-icon green" aria-hidden="true">↗</span>
+              Admission process
+            </button>
+            <button type="button" data-prompt="What are the college fees?">
+              <span class="suggestion-icon gold" aria-hidden="true">$</span>
+              Tuition &amp; fees
+            </button>
+            <button type="button" data-prompt="What campus facilities are available?">
+              <span class="suggestion-icon slate" aria-hidden="true">⌂</span>
+              Campus facilities
+            </button>
+          </div>
+
+          <article id="typing" class="message bot-message typing-message" hidden>
+            <div class="message-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 10h8M9 14h.01M15 14h.01"></path>
+                <rect x="4" y="6" width="16" height="13" rx="5"></rect>
+                <path d="M12 3v3"></path>
+              </svg>
+            </div>
+            <div class="bubble bot typing-bubble" aria-label="CampusAI is typing">
+              <span></span><span></span><span></span>
+            </div>
+          </article>
+        </div>
+
+        <form id="message-form" class="composer">
+          <label class="sr-only" for="msg">Ask CampusAI a question</label>
+          <div class="input-wrap">
+            <textarea
+              id="msg"
+              rows="1"
+              maxlength="1000"
+              placeholder="Ask anything about your university…"
+              autocomplete="off"
+            ></textarea>
+            <button id="send-button" type="submit" aria-label="Send message">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m5 12 14-7-4 14-3-6-7-1Z"></path>
+                <path d="m12 13 7-8"></path>
+              </svg>
+            </button>
+          </div>
+          <p>CampusAI can make mistakes. Verify important university details.</p>
+        </form>
+      </section>
+    </main>
 
     <script>
-    // Persistent debug panel and helpers
-    function createDebugPanel(){
-      let d = document.getElementById('debug');
-      if(!d){
-        d = document.createElement('div');
-        d.id = 'debug';
-        d.style = 'position:fixed;right:10px;bottom:10px;width:340px;max-height:240px;overflow:auto;background:rgba(0,0,0,0.8);color:#8ef;font-family:monospace;font-size:12px;padding:8px;border-radius:6px;z-index:9999';
-        document.body.appendChild(d);
+      const form = document.getElementById("message-form");
+      const input = document.getElementById("msg");
+      const chat = document.getElementById("chat");
+      const sendButton = document.getElementById("send-button");
+      const suggestions = document.getElementById("suggestions");
+      const typing = document.getElementById("typing");
+      const clearButton = document.getElementById("clear-chat");
+
+      function currentTime() {
+        return new Intl.DateTimeFormat([], {
+          hour: "numeric",
+          minute: "2-digit",
+        }).format(new Date());
       }
-      return d;
-    }
 
-    function logDebug(...args){
-      console.log(...args);
-      try{
-        const d = createDebugPanel();
-        const el = document.createElement('div');
-        el.textContent = args.map(a => (typeof a === 'object' ? JSON.stringify(a) : String(a))).join(' ');
-        d.appendChild(el);
-        d.scrollTop = d.scrollHeight;
-        const hist = JSON.parse(localStorage.getItem('debugHist') || '[]');
-        hist.push(el.textContent);
-        if(hist.length > 200) hist.shift();
-        localStorage.setItem('debugHist', JSON.stringify(hist));
-      }catch(e){ /* ignore */ }
-    }
-
-    // Restore previous debug history
-    window.addEventListener('DOMContentLoaded', ()=>{
-      try{
-        const d = createDebugPanel();
-        const hist = JSON.parse(localStorage.getItem('debugHist') || '[]');
-        hist.forEach(line => { const el = document.createElement('div'); el.textContent = line; d.appendChild(el); });
-      }catch(e){}
-      // Prevent any accidental form submissions
-      document.addEventListener('submit', function(e){ logDebug('prevented submit on', e.target); e.preventDefault(); }, true);
-      // Intercept Enter key on the message input
-      const input = document.getElementById('msg');
-      if(input){
-        input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); logDebug('Enter pressed — sending'); sendMessage(); } });
-      }
-    });
-
-    async function sendMessage() {
-      const input = document.getElementById('msg');
-      const text = input.value.trim();
-      if(!text) return;
-      // show user bubble immediately and log
-      addBubble('user', text);
-      logDebug('Client: sending message ->', text);
-      // disable input while waiting for response
-      input.disabled = true;
-      try {
-        const resp = await fetch('/predict', {
-          method: 'POST', headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({message: text})
+      function scrollToLatest() {
+        requestAnimationFrame(() => {
+          chat.scrollTo({ top: chat.scrollHeight, behavior: "smooth" });
         });
-        logDebug('Client: fetch completed, status=', resp.status);
-        if (!resp.ok) {
-          const txt = await resp.text();
-          console.error('Client: server error', resp.status, txt);
-          addBubble('bot', 'Error: server returned ' + resp.status);
-          logDebug('Server error body:', txt);
-        } else {
-          const data = await resp.json();
-          logDebug('Client: received data ->', data);
-          addBubble('bot', data.response || 'No response');
-        }
-      } catch (err) {
-        console.error('Client: fetch failed', err);
-        addBubble('bot', 'Network error: ' + (err.message || err));
-        logDebug('Fetch exception:', err);
-      } finally {
-        input.disabled = false;
-        input.value = '';
-        input.focus();
       }
-    }
 
-    function addBubble(who, text) {
-      const box = document.getElementById('chat');
-      const el = document.createElement('div');
-      el.className = 'bubble ' + who;
-      el.textContent = text;
-      box.appendChild(el);
-      box.scrollTop = box.scrollHeight;
-      logDebug('Client: added bubble', who, text);
-    }
+      function resizeInput() {
+        input.style.height = "auto";
+        input.style.height = `${Math.min(input.scrollHeight, 120)}px`;
+      }
 
-    // global error handlers to surface unexpected errors
-    window.addEventListener('error', function(e){
-      console.error('Uncaught error:', e.error || e.message);
-      addBubble('bot', 'Client error: ' + (e.message || e.error));
-      logDebug('Uncaught error:', e.error || e.message);
-    });
-    window.addEventListener('unhandledrejection', function(e){
-      console.error('Unhandled rejection:', e.reason);
-      addBubble('bot', 'Client promise error');
-      logDebug('Unhandled rejection:', e.reason);
-    });
+      function createMessage(who, text, isError = false) {
+        const article = document.createElement("article");
+        article.className = `message ${who}-message`;
+
+        if (who === "bot") {
+          const avatar = document.createElement("div");
+          avatar.className = "message-avatar";
+          avatar.setAttribute("aria-hidden", "true");
+          avatar.innerHTML =
+            '<svg viewBox="0 0 24 24"><path d="M8 10h8M9 14h.01M15 14h.01"></path><rect x="4" y="6" width="16" height="13" rx="5"></rect><path d="M12 3v3"></path></svg>';
+          article.appendChild(avatar);
+        }
+
+        const content = document.createElement("div");
+        const bubble = document.createElement("div");
+        bubble.className = `bubble ${who}${isError ? " error" : ""}`;
+        const paragraph = document.createElement("p");
+        paragraph.textContent = text;
+        bubble.appendChild(paragraph);
+
+        const timestamp = document.createElement("time");
+        timestamp.textContent = currentTime();
+        content.append(bubble, timestamp);
+        article.appendChild(content);
+
+        chat.insertBefore(article, typing);
+        scrollToLatest();
+      }
+
+      function setLoading(loading) {
+        input.disabled = loading;
+        sendButton.disabled = loading;
+        clearButton.disabled = loading;
+        typing.hidden = !loading;
+        if (loading) scrollToLatest();
+      }
+
+      async function sendMessage(message) {
+        const text = (message ?? input.value).trim();
+        if (!text || sendButton.disabled) return;
+
+        createMessage("user", text);
+        suggestions.hidden = true;
+        input.value = "";
+        resizeInput();
+        setLoading(true);
+
+        try {
+          const response = await fetch("{{ url_for('predict') }}", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: text }),
+          });
+          const data = await response.json().catch(() => ({}));
+
+          if (!response.ok) {
+            throw new Error(data.error || "The assistant could not respond.");
+          }
+          createMessage("bot", data.response || "I couldn’t find an answer.");
+        } catch (error) {
+          createMessage(
+            "bot",
+            error.message === "Failed to fetch"
+              ? "I can’t reach the server right now. Please try again."
+              : error.message,
+            true,
+          );
+        } finally {
+          setLoading(false);
+          input.focus();
+        }
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        sendMessage();
+      });
+
+      input.addEventListener("input", resizeInput);
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" && !event.shiftKey) {
+          event.preventDefault();
+          form.requestSubmit();
+        }
+      });
+
+      suggestions.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-prompt]");
+        if (button) sendMessage(button.dataset.prompt);
+      });
+
+      clearButton.addEventListener("click", () => {
+        chat.querySelectorAll(".message:not(:first-of-type)").forEach((message) => {
+          if (message.id !== "typing") message.remove();
+        });
+        suggestions.hidden = false;
+        input.value = "";
+        resizeInput();
+        input.focus();
+      });
+
+      if (window.matchMedia("(min-width: 700px)").matches) input.focus();
     </script>
   </body>
 </html>

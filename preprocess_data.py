@@ -2,10 +2,6 @@ import json
 import re
 import pickle
 from pathlib import Path
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.preprocessing import LabelEncoder
 
 import nltk
 from nltk.corpus import stopwords
@@ -82,6 +78,11 @@ def build_dataset(intents_json: dict):
 
 
 def main():
+    import pandas as pd
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import LabelEncoder
+
     ensure_nltk()
     lemmatizer = WordNetLemmatizer()
     try:

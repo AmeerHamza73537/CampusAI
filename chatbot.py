@@ -6,19 +6,26 @@ from pathlib import Path
 import numpy as np
 from preprocess_data import clean_text, tokenize_lemmatize, ensure_nltk
 
-import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-ROOT = Path(".")
+ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / "results"
+FALLBACK_STOP_WORDS = {
+    "a", "an", "and", "are", "at", "for", "from", "in", "is", "it", "of",
+    "on", "or", "the", "to", "what", "where", "which", "with",
+}
 
 
 class ChatbotEngine:
     def __init__(self, model_path=None):
         ensure_nltk()
         self.lemmatizer = WordNetLemmatizer()
-        self.stop_words = set(stopwords.words("english"))
+        try:
+            self.stop_words = set(stopwords.words("english"))
+        except LookupError:
+            self.stop_words = FALLBACK_STOP_WORDS
+
         with open(ROOT / "vectorizer.pkl", "rb") as f:
             self.vectorizer = pickle.load(f)
         with open(ROOT / "label_encoder.pkl", "rb") as f:
@@ -88,12 +95,20 @@ class ChatbotEngine:
         if normalized in self.direct_intents:
             tag = self.direct_intents[normalized]
             responses = self.responses.get(tag) or ["Sorry, I don't know that yet."]
-            return {"intent": tag, "response": random.choice(responses)}
+            return {
+                "intent": tag,
+                "confidence": 1.0,
+                "response": random.choice(responses),
+            }
 
         processed = self.preprocess(text)
         X = self.vectorizer.transform([processed])
         if self.model is None:
-            return {"intent": None, "response": "Sorry, model not found."}
+            return {
+                "intent": None,
+                "confidence": 0.0,
+                "response": "Sorry, the response model is not available.",
+            }
 
         confidence = 1.0
         if self.model_type == "sklearn":
@@ -118,9 +133,17 @@ class ChatbotEngine:
                 "Sorry, I didn't understand that. Can you ask something related to university?",
                 "I am not sure about that. Please ask another university-related question."
             ]
-            return {"intent": "unknown", "response": random.choice(fallback)}
+            return {
+                "intent": "unknown",
+                "confidence": round(confidence, 3),
+                "response": random.choice(fallback),
+            }
 
-        return {"intent": intent, "response": random.choice(responses)}
+        return {
+            "intent": intent,
+            "confidence": round(confidence, 3),
+            "response": random.choice(responses),
+        }
 
 
 if __name__ == "__main__":

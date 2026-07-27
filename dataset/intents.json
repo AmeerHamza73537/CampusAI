@@ -359,7 +359,7 @@
        "location"
     ],
     "responses": [
-       "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+       "Please contact the university help desk for the current campus address and directions."
     ],
     "extension":  {
         "function": "",
@@ -405,7 +405,7 @@
        "girls hostel accommodation"
     ],
     "responses": [
-       "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>. The university also offers separate on-campus accommodation blocks for female students."
+       "The university offers separate on-campus accommodation blocks for female students. Contact student services for current hostel locations, availability, and fees."
     ],
     "extension":  {
         "function": "",
@@ -489,7 +489,7 @@
        "what about events"
     ],
     "responses": [
-       "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
+       "University events are announced through the student portal and campus notice boards. Contact student affairs for the latest schedule."
     ],
     "extension":  {
         "function": "",
@@ -522,7 +522,7 @@
        "documents needed"
     ],
     "responses": [
-       "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR UNIVERSITY WEBSITE\"> here</a>"
+       "Admission document requirements vary by program. Check with the admissions office or official student portal for the current checklist."
     ],
     "extension":  {
         "function": "",
@@ -576,7 +576,7 @@
        "What is next lecture"
     ],
     "responses": [
-       "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"TIMETABLE LINK\"> here</a>"
+       "Class timetables are shared directly with enrolled students through their department or student portal."
     ],
     "extension":  {
         "function": "",
@@ -613,7 +613,7 @@
        "exam season library hours"
     ],
     "responses": [
-       "There is one huge and spacious library. Regular hours are 8am to 6pm; during exam season, the library may extend hours later into the evening. For more details visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>."
+       "There is one large, spacious library. Regular hours are 8am to 6pm, with possible extended hours during exam season."
     ],
     "extension":  {
         "function": "",
@@ -749,7 +749,7 @@
        "companies"
     ],
     "responses": [
-       "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR UNIVERSITY WEBSITE IF THEY HAVE\">here</a>"
+       "The career services office provides placement guidance, employer events, and interview support. Contact the office for the latest opportunities."
     ],
     "extension":  {
         "function": "",
@@ -882,7 +882,7 @@
        "when are final exams held"
     ],
     "responses": [
-       "Final exams are usually held at the end of each semester. Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>."
+       "Final exams are usually held at the end of each semester. The official academic calendar is available from the registrar or student portal."
     ],
     "extension":  {
         "function": "",
@@ -1069,7 +1069,7 @@
        "admission process"
     ],
     "responses": [
-       "Application can also be submitted online through the University's <a target=\"_blank\" href=\"LINK OF ADMISSION DOCUMENT\">website</a>."
+       "Applications can also be submitted online through the university's official admissions portal."
     ],
     "extension":  {
         "function": "",
@@ -1435,7 +1435,7 @@
        "please provide sports and games information"
     ],
     "responses": [
-       "Our university encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"(LINK IF HAVE)\">here</a>"
+       "The university supports all-round student development with a range of on-campus sports facilities. Contact student affairs for current activities and access details."
     ],
     "extension":  {
         "function": "",
@@ -1576,7 +1576,7 @@
        "Academic Calander"
     ],
     "responses": [
-       "Timetable Link visit <a target=\"_blank\" href=\"https://lightningmcqueen-95.github.io/collage/index.html\"> here</a>"
+       "Class timetables are published through the student portal and shared by each academic department."
     ],
     "extension":  {
         "function": "",
